@@ -1,0 +1,50 @@
+{% extends '::base.html.twig' %}
+{% block body -%}
+    <table><tr>
+        <td>{{ form(form) }}</td>
+        <td>
+            <table>
+                <tr>
+                    <td>Lowest cost</td>
+                    <td>{{ costs.minTariff.totalCost }}</td>
+                </tr>
+                <tr>
+                    <td>Tariff</td>
+                    <td>{{ costs.minTariff.tariff }}</td>
+                </tr>
+                <tr>
+                    <td>Provider</td>
+                    <td>{{ costs.minTariff.provider }} (hardware: {{ costs.minTariff.hardwareProvider }})</td>
+                </tr>
+            </table>
+        </td>
+    </tr></table>
+    <table>
+        <thead>
+            <tr>
+                <td>{% trans %}Provider{% endtrans %}</td>
+                <td>{% trans %}Hardware provider{% endtrans %}</td>
+                <td>{% trans %}Tariff{% endtrans %}</td>
+                <td>{% trans %}Total cost{% endtrans %}</td>
+                <td>{% trans %}Monthly payment{% endtrans %}</td>
+                <td>{% trans %}Free minutes{% endtrans %}</td>
+                <td>{% trans %}Internal calls price{% endtrans %}</td>
+                <td>{% trans %}External calls price{% endtrans %}</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for costModel in costs.costs %}
+                <tr>
+                    <td>{{ costModel.provider }}</td>
+                    <td>{{ costModel.hardwareProvider }}</td>
+                    <td>{{ costModel.tariff }}</td>
+                    <td>{{ costModel.totalCost }}</td>
+                    <td>{{ costModel.monthlyPayment }}</td>
+                    <td>{{ costModel.freeMinutes }}</td>
+                    <td>{{ costModel.internalCallsPrice }}</td>
+                    <td>{{ costModel.externalCallsPrice }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

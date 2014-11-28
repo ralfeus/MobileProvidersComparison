@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>{% trans %}Tariff{% endtrans %}</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tariff.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ tariff.name }}</td>
+            </tr>
+            <tr>
+                <th>Provider</th>
+                <td>{{ tariff.provider }}</td>
+            </tr>
+            <tr>
+                <th>Monthly payment</th>
+                <td>{{ tariff.monthlyPayment }}</td>
+            </tr>
+            <tr>
+                <th>Free minutes</th>
+                <td>{{ tariff.freeMinutes }}</td>
+            </tr>
+            <tr>
+                <th>Internal calls price</th>
+                <td>{{ tariff.internalCallsPrice }}</td>
+            </tr>
+            <tr>
+                <th>External calls price</th>
+                <td>{{ tariff.externalCallsPrice }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('tariff') }}">
+                Back to the list
+            </a>
+        </li>
+        <li>{{ form(edit_form) }}</li>
+        <li>{{ form(delete_form) }}</li>
+    </ul>
+{% endblock %}

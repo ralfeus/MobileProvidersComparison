@@ -1,0 +1,5 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <a href="{{ path('provider_new') }}">{% trans %}Create a new entry{% endtrans %}</a>
+    {{ grid(grid) }}
+{% endblock %}
