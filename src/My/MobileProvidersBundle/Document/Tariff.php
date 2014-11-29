@@ -2,6 +2,7 @@
 namespace My\MobileProvidersBundle\Document;
 use APY\DataGridBundle\Grid\Mapping as Grid;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
+use Doctrine\ODM\MongoDB\Mapping\Annotations\Id;
 
 /**
  * @MongoDB\Document

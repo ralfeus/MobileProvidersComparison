@@ -5,7 +5,7 @@ use My\MobileProvidersBundle\Document\Tariff;
 
 class BaseCalc {
     /** @var Tariff */
-    private $tariff;
+    protected $tariff;
 
     /**
      * @param Tariff $tariff

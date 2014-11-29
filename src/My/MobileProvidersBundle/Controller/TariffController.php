@@ -202,7 +202,7 @@ class TariffController extends Controller {
 
     /**
      * Edits an existing Product entity.
-     * @Route("/update", name="tariff_update")
+     * @Route("/tariff/update/{id}", name="tariff_update")
      * @param Request $request
      * @param Id $id
      * @return \Symfony\Component\HttpFoundation\Response
@@ -224,7 +224,7 @@ class TariffController extends Controller {
         if ($editForm->isValid()) {
             $dm->flush();
 
-            return $this->redirect($this->generateUrl('product_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('tariff_edit', array('id' => $id)));
         }
 
         return $this->render('MyMobileProvidersBundle:Tariff:edit.html.twig', array(

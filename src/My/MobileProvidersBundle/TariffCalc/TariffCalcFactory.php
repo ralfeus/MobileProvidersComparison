@@ -3,6 +3,7 @@ namespace My\MobileProvidersBundle\TariffCalc;
 
 use My\MobileProvidersBundle\Document\Tariff;
 use Symfony\Component\Debug\Exception\ClassNotFoundException;
+use Symfony\Component\Debug\Exception\FatalErrorException;
 
 class TariffCalcFactory {
     private static $instances = array();
@@ -14,10 +15,11 @@ class TariffCalcFactory {
      */
     private static function getInstance($className) {
         if (!array_key_exists($className, TariffCalcFactory::$instances)) {
-            if ($className === "BaseCalc") {
-                TariffCalcFactory::$instances[$className] = new BaseCalc();
+            $classFQN = "My\\MobileProvidersBundle\\TariffCalc\\" . $className;
+            if (class_exists($classFQN)) {
+                TariffCalcFactory::$instances[$className] = new $classFQN();
             } else {
-                throw new ClassNotFoundException("The class '$className' is not found", new \ErrorException());
+                throw new ClassNotFoundException("Class $classFQN was not found", new \ErrorException());
             }
         }
         return TariffCalcFactory::$instances[$className];
@@ -28,7 +30,11 @@ class TariffCalcFactory {
      * @return BaseCalc
      */
     public static function createCalc($tariff) {
-        $newObject = clone TariffCalcFactory::getInstance("BaseCalc");
+        try {
+            $newObject = clone TariffCalcFactory::getInstance("Tariff" . $tariff->getId() . "Calc");
+        } catch (\Exception $exc) {
+            $newObject = clone TariffCalcFactory::getInstance("BaseCalc");
+        }
         $newObject->init($tariff);
         return $newObject;
     }

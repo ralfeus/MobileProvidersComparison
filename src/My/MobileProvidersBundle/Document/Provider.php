@@ -28,6 +28,12 @@ class Provider {
     protected $hardwareProvider;
 
     /**
+     * @MongoDB\string
+     * @Grid\Column(title="URL", filterable=false)
+     */
+    protected $url;
+
+    /**
      * @return string
      */
     function __toString() {
@@ -87,5 +93,27 @@ class Provider {
     public function getHardwareProvider()
     {
         return $this->hardwareProvider;
+    }
+
+    /**
+     * Set url
+     *
+     * @param string $url
+     * @return self
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+        return $this;
+    }
+
+    /**
+     * Get url
+     *
+     * @return string $url
+     */
+    public function getUrl()
+    {
+        return $this->url;
     }
 }

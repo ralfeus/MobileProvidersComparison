@@ -11,6 +11,7 @@ class ProviderType extends AbstractType {
         $builder
             ->add('name')
             ->add('hardwareProvider')
+            ->add('url')
             ->add('save', 'submit')
             ->add('saveAndEdit', 'submit')
             ->add('saveAndNew', 'submit');
