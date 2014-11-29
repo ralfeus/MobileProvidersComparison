@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new My\AppBundle\MyAppBundle(),
             new My\StoreBundle\MyStoreBundle(),
             new My\MobileProvidersBundle\MyMobileProvidersBundle(),
+            new AntiMattr\GoogleBundle\GoogleBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
