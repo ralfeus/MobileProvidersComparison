@@ -2,6 +2,6 @@ my_mobile_providers:
     resource: "@MyMobileProvidersBundle/Resources/config/routing.xml"
     prefix:   /
 
-my_store:
-    resource: "@MyStoreBundle/Resources/config/routing.xml"
-    prefix:   /store
+#my_store:
+#    resource: "@MyStoreBundle/Resources/config/routing.xml"
+#    prefix:   /store
