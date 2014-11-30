@@ -87,5 +87,5 @@ google:
             default:
                 name:      RalfeusInfo
                 accountId: UA-57218922-1
-                domain:    .ralfeus.info
+                domain:    ralfeus.info
                 trackPageLoadTime: true
