@@ -19,8 +19,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new APY\DataGridBundle\APYDataGridBundle(),
 
-            new My\AppBundle\MyAppBundle(),
-            new My\StoreBundle\MyStoreBundle(),
+//            new My\AppBundle\MyAppBundle(),
+//            new My\StoreBundle\MyStoreBundle(),
             new My\MobileProvidersBundle\MyMobileProvidersBundle(),
             new AntiMattr\GoogleBundle\GoogleBundle(),
         );
