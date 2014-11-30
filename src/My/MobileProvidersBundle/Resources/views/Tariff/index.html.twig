@@ -1,4 +1,4 @@
-{% extends '::base.html.twig' %}
+{% extends 'MyMobileProvidersBundle::base.html.twig' %}
 {% block body -%}
     <a href="{{ path('tariff_new') }}">{% trans %}Create a new entry{% endtrans %}</a>
     {{ grid(grid) }}

@@ -1,10 +1,4 @@
-{% extends '::base.html.twig' %}
-
-{% block stylesheets %}
-    {% stylesheets 'bundles/mymobileproviders/css/*' filter='cssrewrite' %}
-        <link rel="stylesheet" href="{{ asset_url }}" />
-    {% endstylesheets %}
-{% endblock %}
+{% extends 'MyMobileProvidersBundle::base.html.twig' %}
 
 {% block body %}
     <table><tr>
