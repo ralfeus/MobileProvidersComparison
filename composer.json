@@ -21,7 +21,8 @@
         "doctrine/mongodb": "1.1.6",
         "doctrine/mongodb-odm": "1.0.x-dev",
         "doctrine/mongodb-odm-bundle": "v3.0.0-BETA6",
-        "apy/datagrid-bundle": "2.2.1"
+        "apy/datagrid-bundle": "2.2.1",
+        "sonata-project/jquery-bundle": "1.10.2"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"

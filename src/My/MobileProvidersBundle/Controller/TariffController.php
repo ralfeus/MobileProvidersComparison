@@ -61,9 +61,10 @@ class TariffController extends Controller {
 
     /**
      * @Route("/tariff", name="tariff")
-     * @Template("MyMobileProvidersBundle:Tariff:index.html.twig")
+     * @param Request $request
+     * @return
      */
-    public function indexAction() {
+    public function indexAction(Request $request) {
 //        /** @var DocumentManager $dm */
 //        $dm = $this->get('doctrine_mongodb')->getManager();
 //        $documents = $dm->getRepository('MyMobileProvidersBundle:Tariff')->findAll();
@@ -73,7 +74,8 @@ class TariffController extends Controller {
 //        ));
         $grid = $this->get('grid');
         $grid->setSource(new Document('MyMobileProvidersBundle:Tariff'));
-        return $grid->getGridResponse();
+        return $grid->getGridResponse($request->isXmlHttpRequest()
+            ? 'MyMobileProvidersBundle:Tariff:grid.html.twig' : 'MyMobileProvidersBundle:Tariff:index.html.twig');
     }
 
     /**

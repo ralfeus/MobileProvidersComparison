@@ -50,6 +50,15 @@ class CostModel {
     }
 
     /**
+     * @param float $value
+     * @return self
+     */
+    public function setTotalCost($value) {
+        $this->cost = $value;
+        return $this;
+    }
+
+    /**
      * @return int
      */
     public function getFreeMinutes() {

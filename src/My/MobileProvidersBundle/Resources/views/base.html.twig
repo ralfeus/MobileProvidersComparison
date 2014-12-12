@@ -1,7 +1,9 @@
 {% extends '::base.html.twig' %}
 
 {% block stylesheets %}
+    {{ parent() }}
     {% stylesheets 'bundles/mymobileproviders/css/*' filter='cssrewrite' %}
-    <link rel="stylesheet" href="{{ asset_url }}" />
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" media="all"/>
     {% endstylesheets %}
+    {#<link rel="stylesheet" href="{{ asset('bundles/mymobileproviders/css/site.css') }}" type="text/css" media="all" />#}
 {% endblock %}
