@@ -1,5 +1,8 @@
 {% extends 'MyMobileProvidersBundle::base.html.twig' %}
-
+{% block head %}
+    {{  parent() }}
+    <meta property="fb:app_id" content="153411024681332" />
+{% endblock %}
 {% block body %}
     <div id="fb-root"></div>
     <script>
